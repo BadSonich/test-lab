@@ -229,8 +229,8 @@
         padding: 56px 0 45px;
 
         @include media.breakpoint('xl') {
-            padding-left: 20px;
-            padding-right: 20px;
+            padding-left: 0;
+            padding-right: 0;
         }
 
         @include media.breakpoint('lg') {
@@ -311,7 +311,11 @@
         padding: 0 48px;
 
         @include media.breakpoint('lg') {
-            padding: 0;
+            padding: 0 20px;
+        }
+
+        @include media.breakpoint('md') {
+            padding: 0 16px;
         }
     }
 
