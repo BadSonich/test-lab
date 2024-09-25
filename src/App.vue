@@ -4,6 +4,7 @@
   <HowItWorks></HowItWorks>
   <ThirdBlock></ThirdBlock>
   <MyReviews></MyReviews>
+  <SiteFaq></SiteFaq>
 </template>
 
 <script>
@@ -12,6 +13,7 @@ import MyBanner from "./components/Banner.vue";
 import HowItWorks from "./components/HowItWorks.vue";
 import ThirdBlock from "./components/ThirdBlock.vue";
 import MyReviews from "./components/Reviews.vue";
+import SiteFaq from "./components/Faq.vue";
 
 export default {
   name: 'App',
@@ -21,6 +23,7 @@ export default {
     HowItWorks,
     ThirdBlock,
     MyReviews,
+    SiteFaq,
   }
 }
 </script>
