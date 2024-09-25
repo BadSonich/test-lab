@@ -1,5 +1,5 @@
 <template>
-  <section class="faq">
+  <section class="faq" id="faq">
     <div class="container">
       <h2>Вопросы и ответы</h2>
       <div class="faq__list">

@@ -12,10 +12,10 @@
           </a>
           <span class="submenu__close" @click="toggleMenu"></span>
         </div>
-        <a href="#">Как это работает</a>
-        <a href="#">3-й блок</a>
-        <a href="#">Вопросы и ответы</a>
-        <a href="#">Форма</a>
+        <a href="/#how-it-works">Как это работает</a>
+        <a href="/#third-block">3-й блок</a>
+        <a href="/#faq">Вопросы и ответы</a>
+        <a href="/#">Форма</a>
       </div>
     </div>
   </header>

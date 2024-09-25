@@ -1,5 +1,5 @@
 <template>
-  <section class="third-block">
+  <section class="third-block" id="third-block">
     <div class="container">
       <div class="third-block__info">
         <h3>Круто, ты дошел до третьего блока</h3>
