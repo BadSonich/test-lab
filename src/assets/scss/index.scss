@@ -1,1 +1,382 @@
 @use "./mixins/colors.scss" as colors;
+@use "./mixins/media.scss" as media;
+
+.banner {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-image: url("/public/banner.jpg");
+    background-position: 0 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #{colors.getColor('primary')};
+        opacity: 0.8;
+    }
+
+    @include media.breakpoint('lg') {
+        background-image: url("/public/banner-mob.jpg");
+    }
+}
+
+.main-info {
+    margin: 0 auto;
+    max-width: 750px;
+    position: absolute;
+    top: calc(50% - (330px / 2));
+    left: calc(50% - (750px / 2));
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 92px;
+    text-align: center;
+    color: #{colors.getColor('white')};
+
+    @include media.breakpoint('lg') {
+        gap: 40px;
+        width: 100%;
+        max-width: unset;
+        padding: 0 146px;
+        top: calc(50% - (230px / 2));
+        left: 0;
+    }
+
+    @include media.breakpoint('md') {
+        padding: 0 44px;
+        gap: 26px;
+    }
+
+    h1 {
+        padding-bottom: 18px;
+
+        @include media.breakpoint('md') {
+            padding-bottom:10px;
+        }
+    }
+
+    &__subtitle {
+        line-height: 32px;
+    }
+
+    button {
+
+    }
+}
+
+.how-it-works {
+
+    h2 {
+        padding-bottom: 61px;
+
+        @include media.breakpoint('lg') {
+            padding-bottom: 42px;
+        }
+    }
+
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 32px;
+
+        @include media.breakpoint('lg') {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 32px 34px;
+        }
+
+        @include media.breakpoint('md') {
+            grid-template-columns: 1fr;
+            gap: 32px;
+        }
+    }
+
+    &__element {
+        text-align: left;
+
+        @include media.breakpoint('lg') {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 16px;
+        }
+
+        img {
+            margin-bottom: 16px;
+
+            @include media.breakpoint('lg') {
+                margin-bottom: 0;
+                max-height: 56px;
+            }
+        }
+
+        h6 {
+            padding-bottom: 4px;
+        }
+
+        p {
+            font-size: 14px;
+            line-height: 24px;
+            color: #{colors.getColor('darkGray')};
+        }
+    }
+}
+
+.third-block {
+
+    .container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 32px;
+        align-items: center;
+
+        @include media.breakpoint('lg') {
+            gap: 29px;
+        }
+
+        @include media.breakpoint('md') {
+            grid-template-columns: 1fr;
+            gap: 7px;
+        }
+
+        @include media.breakpoint('xs') {
+            gap: 27px;
+        }
+    }
+
+    &__info {
+        text-align: left;
+        display: grid;
+
+        @include media.breakpoint('md') {
+            text-align: center;
+        }
+
+        h3 {
+            padding-bottom: 18px;
+
+            @include media.breakpoint('lg') {
+                padding-bottom: 15px;
+            }
+
+            @include media.breakpoint('md') {
+                padding-bottom: 0;
+            }
+
+            @include media.breakpoint('xs') {
+                padding-bottom: 27px;
+            }
+        }
+
+        p {
+            line-height: 28px;
+            color: #{colors.getColor('darkGray')};
+
+            &:first-of-type {
+                padding-bottom: 28px;
+            }
+        }
+    }
+
+    &__images {
+        aspect-ratio: 592 / 448;
+        position: relative;
+
+        @include media.breakpoint('md') {
+            order: -1;
+        }
+
+        &:before {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("/public/third-block/2_2.png");
+            background-size: 100%;
+            background-position: 0 0;
+            background-repeat: no-repeat;
+        }
+
+        &:after {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("/public/third-block/2_1.png");
+            background-size: 100%;
+            background-position: 0 0;
+            background-repeat: no-repeat;
+        }
+    }
+}
+
+.reviews {
+
+    background-color: #{colors.getColor('extralightGray')};
+
+    .container {
+        max-width: 1238px;
+        padding: 56px 0 45px;
+
+        @include media.breakpoint('xl') {
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+        @include media.breakpoint('lg') {
+            padding-top: 33px;
+        }
+
+        @include media.breakpoint('sm') {
+            padding-top: 27px;
+            padding-bottom: 37px;
+        }
+    }
+
+    &__element {
+        cursor: pointer;
+        height: auto;
+        align-self: stretch;
+
+        &:hover > div {
+            box-shadow: 0px 15px 17px 0px #0000001A;
+        }
+
+        & > div {
+            display: grid;
+            grid-template-rows: auto 1fr;
+            height: 100%;
+            padding: 22px 22px 38px;
+            gap: 20px;
+            background-color: #{colors.getColor('white')};
+            box-shadow: 0px 5px 17px 0px #0000001A;
+            border-radius: 8px;
+            text-align: left;
+
+            @include media.breakpoint('sm') {
+                padding-bottom: 27px;
+            }
+
+            @include media.breakpoint('xs') {
+                padding-bottom: 33px;
+            }
+        }
+
+        p {
+            font-size: 14px;
+            line-height: 24px;
+            color: #{colors.getColor('black')};
+        }
+    }
+
+    &__header {
+        display: flex;
+        gap: 16px;
+
+        h6 {
+            padding-bottom: 4px;
+        }
+    }
+
+    &__img {
+        position: relative;
+        width: 44px;
+        height: 44px;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 100%;
+        }
+    }
+
+    &__city {
+        font-size: 12px;
+        line-height: 16px;
+        color: #{colors.getColor('darkGray')};
+    }
+
+    .swiper {
+        padding: 0 48px;
+
+        @include media.breakpoint('lg') {
+            padding: 0;
+        }
+    }
+
+    .swiper-wrapper {
+        padding: 32px 0 58px;
+
+        @include media.breakpoint('sm') {
+            padding: 26px 0 48px;
+        }
+
+        @include media.breakpoint('xs') {
+            padding: 26px 0 46px;
+        }
+    }
+
+    .swiper-button-prev, .swiper-button-next {
+        z-index: 10;
+        cursor: pointer;
+        position: absolute;
+        top: 0;
+        width: 32px;
+        height: 100%;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position-x: 0;
+        background-position-y: calc(50% - 16px);
+        background-color: #{colors.getColor('extralightGray')};
+
+        @include media.breakpoint('lg') {
+            display: none;
+        }
+    }
+
+    .swiper-button-prev {
+        left: -4px;
+        background-image: url("/public/reviews/fi-sr-angle-left.svg");
+
+        &:hover {
+            background-image: url("/public/reviews/fi-sr-angle-left-blue.svg");
+        }
+    }
+
+    .swiper-button-next {
+        right: -4px;
+        background-image: url("/public/reviews/fi-sr-angle-right.svg");
+
+        &:hover {
+            background-image: url("/public/reviews/fi-sr-angle-right-blue.svg");
+        }
+    }
+
+    .swiper-pagination {
+        bottom: 0 !important;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 9px;
+    }
+
+    .swiper-pagination-bullet {
+        margin: inherit 8px !important;
+        background-color: #{colors.getColor('midGray')};
+
+        &.swiper-pagination-bullet-active {
+            background-color: #{colors.getColor('primary')};
+        }
+    }
+}
