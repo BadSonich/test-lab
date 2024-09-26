@@ -542,12 +542,24 @@
 
     h2 {
         padding-bottom: 44px;
+
+        @include media.breakpoint('lg') {
+            padding-bottom: 32px;
+        }
+
+        @include media.breakpoint('md') {
+            padding-bottom: 30px;
+        }
     }
 
     form {
         display: grid;
         gap: 30px;
         text-align: left;
+
+        @include media.breakpoint('md') {
+            gap: 20px;
+        }
     }
 
     &__top {
@@ -555,6 +567,15 @@
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 32px;
+
+        @include media.breakpoint('lg') {
+            gap: 24px;
+        }
+
+        @include media.breakpoint('md') {
+            gap: 20px;
+            grid-template-columns: 1fr;
+        }
 
         label {
             position: relative;
@@ -568,6 +589,41 @@
                 padding: 8px 16px 0;
             }
 
+            &.error, &.good {
+                padding: 8px 16px 0;
+
+                &::after {
+                    content: '';
+                    display: block;
+                    width: 20px;
+                    height: 20px;
+                    position: absolute;
+                    top: calc(50% - 10px);
+                    right: 16px;
+                    border-radius: 100%;
+                    background-color: white;
+                    background-image: url("/public/cancel.svg");
+                    background-position: 0 0;
+                    background-size: 100%;
+                    background-repeat: no-repeat;
+                }
+            }
+
+            &.error {
+                border-color: #{colors.getColor('red')};
+
+                &::after {
+                    background-image: url("/public/cancel.svg");
+                }
+            }
+
+            &.good {
+
+                &::after {
+                    background-image: url("/public/right.svg");
+                }
+            }
+
             input {
                 border: none;
                 outline: none;
@@ -577,7 +633,7 @@
                 color: #{ colors.getColor('midGray') };
                 font-family: Graphik, serif;
 
-                &:active, &:focus, &:focus-visible {
+                &:active, &:focus, &:focus-visible, &.error, &.good {
                     border: none;
                     outline: none;
                     color: #{ colors.getColor('black') };
@@ -616,6 +672,16 @@
         grid-template-columns: repeat(2, 1fr);
         gap: 32px;
 
+        @include media.breakpoint('lg') {
+            gap: 24px;
+        }
+
+        @include media.breakpoint('md') {
+            gap: 20px;
+            grid-template-columns: 1fr;
+        }
+
+
         button {
             width: 100%;
         }
@@ -652,5 +718,13 @@
                 }
             }
         }
+    }
+
+    &__error-element {
+        position: absolute;
+        bottom: -21px;
+        font-size: 12px;
+        line-height: 16px;
+        color: #{colors.getColor('red')};
     }
 }
