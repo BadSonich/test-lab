@@ -23,7 +23,7 @@
 
 <script>
   export default {
-    name: 'my-header',
+    name: 'site-header',
     data() {
       return {
         menuActive: false

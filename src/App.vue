@@ -1,32 +1,35 @@
 <template>
-  <MyHeader></MyHeader>
-  <MyBanner></MyBanner>
+  <SiteHeader></SiteHeader>
+  <SiteBanner></SiteBanner>
   <HowItWorks></HowItWorks>
   <ThirdBlock></ThirdBlock>
-  <MyReviews></MyReviews>
+  <SiteReviews></SiteReviews>
   <SiteFaq></SiteFaq>
   <BlockSix></BlockSix>
+  <SiteForm></SiteForm>
 </template>
 
 <script>
-import MyHeader from "./components/Header.vue";
-import MyBanner from "./components/Banner.vue";
-import HowItWorks from "./components/HowItWorks.vue";
-import ThirdBlock from "./components/ThirdBlock.vue";
-import MyReviews from "./components/Reviews.vue";
-import SiteFaq from "./components/Faq.vue";
+import SiteHeader from "@/components/Header.vue";
+import SiteBanner from "@/components/Banner.vue";
+import HowItWorks from "@/components/HowItWorks.vue";
+import ThirdBlock from "@/components/ThirdBlock.vue";
+import SiteReviews from "@/components/Reviews.vue";
+import SiteFaq from "@/components/Faq.vue";
 import BlockSix from "@/components/BLockSIx.vue";
+import SiteForm from "@/components/Form.vue";
 
 export default {
   name: 'App',
   components: {
-    MyHeader,
-    MyBanner,
+    SiteHeader,
+    SiteBanner,
     HowItWorks,
     ThirdBlock,
-    MyReviews,
+    SiteReviews,
     SiteFaq,
     BlockSix,
+    SiteForm,
   }
 }
 </script>

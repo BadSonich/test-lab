@@ -56,7 +56,7 @@
   import 'swiper/css/pagination';
 
   export default {
-    name: "my-reviews",
+    name: "site-reviews",
     components: {
       Swiper,
       SwiperSlide,

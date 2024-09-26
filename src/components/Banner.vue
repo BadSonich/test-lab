@@ -16,6 +16,6 @@
 
 <script>
   export default {
-    name: "my-banner"
+    name: "site-banner"
   }
 </script>
