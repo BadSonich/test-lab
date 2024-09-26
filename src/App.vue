@@ -7,6 +7,7 @@
   <SiteFaq></SiteFaq>
   <BlockSix></BlockSix>
   <SiteForm></SiteForm>
+  <SiteFooter></SiteFooter>
 </template>
 
 <script>
@@ -18,6 +19,7 @@ import SiteReviews from "@/components/Reviews.vue";
 import SiteFaq from "@/components/Faq.vue";
 import BlockSix from "@/components/BLockSIx.vue";
 import SiteForm from "@/components/Form.vue";
+import SiteFooter from "@/components/Footer.vue";
 
 export default {
   name: 'App',
@@ -30,6 +32,7 @@ export default {
     SiteFaq,
     BlockSix,
     SiteForm,
+    SiteFooter,
   }
 }
 </script>

@@ -303,3 +303,20 @@ button {
         }
     }
 }
+
+.footer {
+
+    border-top: 1px solid #{colors.getColor('lightGray')};
+
+    .container {
+        padding-top: 28px;
+        padding-bottom: 28px;
+        margin-top: 0;
+        margin-bottom: 0;
+
+        div {
+            font-size: 18px;
+            line-height: 32px;
+        }
+    }
+}
